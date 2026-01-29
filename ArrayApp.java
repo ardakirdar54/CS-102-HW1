@@ -33,9 +33,18 @@ public class ArrayApp {
         return min;
     }
 
-    public int[] differenceToAverage(int[] arr) {
-        // TO DO: Implement this method
-        return null;
+    public int[] differenceFromAverage(int[] arr) {
+        int average = 0;
+        for(int i = 0; i < arr.length; i++){
+            average += arr[i];
+        }
+        average /= arr.length;
+
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = arr[i] - average;
+        }
+
+        return arr;
     }
 
     public int findSumOfOddNumberedIndexes(int[] arr) {
