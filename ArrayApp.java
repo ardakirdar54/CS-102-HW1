@@ -35,9 +35,23 @@ public class ArrayApp {
         return min;
     }
 
-    public int[] differenceToAverage(int[] arr) {
-        // TO DO: Implement this method
-        return null;
+    /**
+     * Finds the difference of all elements from average of elements
+     * @param arr
+     * @return Difference of all elements from average
+     */
+    public int[] differenceFromAverage(int[] arr) {
+        int average = 0;
+        for(int i = 0; i < arr.length; i++){
+            average += arr[i];
+        }
+        average /= arr.length;
+
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = arr[i] - average;
+        }
+
+        return arr;
     }
 
     /**
