@@ -1,16 +1,13 @@
 import java.util.Random;
 
 public class ArrayApp {
-    public static void main(String[] args) {
-        
-    }
     
     /**
      * Finds the maximum value in an integer array.
      * @param arr the input array
      * @return maximum value in the array
      */
-    public int findMax(int[] arr) {
+    public static int findMax(int[] arr) {
         int max = arr[0];
         for (int num : arr) {
             if (num > max) {
@@ -25,7 +22,7 @@ public class ArrayApp {
      * @param arr the input array
      * @return minimum value in the array
      */
-    public int findMin(int[] arr) {
+    public static int findMin(int[] arr) {
         int min = arr[0];
         for (int num : arr) {
             if (num < min) {
@@ -40,7 +37,7 @@ public class ArrayApp {
      * @param arr
      * @return Difference of all elements from average
      */
-    public int[] differenceFromAverage(int[] arr) {
+    public static int[] differenceFromAverage(int[] arr) {
         int average = 0;
         for(int i = 0; i < arr.length; i++){
             average += arr[i];
@@ -59,7 +56,7 @@ public class ArrayApp {
      * @param arr the input array
      * @return sum of odd-numbered indexes in the array
      */
-    public int findSumOfOddNumberedIndexes(int[] arr) {
+    public static int findSumOfOddNumberedIndexes(int[] arr) {
         int sum = 0;
         for (int i = 1; i < arr.length; i += 2) {
             sum += arr[i];
@@ -72,7 +69,7 @@ public class ArrayApp {
      * @param arr the input array
      * @return sum of odd-numbered indexes in the array
      */
-    public int findSumOfEvenNumberedIndexes(int[] arr) {
+    public static int findSumOfEvenNumberedIndexes(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i += 2) {
             sum += arr[i];
@@ -81,7 +78,7 @@ public class ArrayApp {
     }
 
     // Taken an array size from the user, create an int array that contains random integers in the range [0,100]. 
-    public static int[] CreateRandomArray(int size){
+    public static int[] createRandomArray(int size){
         Random random=new Random();
         int[] RandomArray=new int[size];
         for(int i=0;i<size;i++){
