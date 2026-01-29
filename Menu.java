@@ -5,36 +5,37 @@ import java.util.Scanner;
 public class Menu {
     
     public static void main(String[] args) {
-        boolean isValidChoice = false;
-        boolean isFinished = false;
-        int option = 0; // by default, invalid choice number. 
+        boolean isFinished = false;         
         Scanner input = new Scanner(System.in);
         System.out.print("Give the array size: ");
         int size = input.nextInt();
         int [] arr = ArrayApp.createRandomArray(size);
         
         while(!isFinished){
-            System.out.println("Welcome to the Array App");
+            System.out.println("\nWelcome to the Array App");
             System.out.println("""
                 1-Find the array's minimum and maximum
-                2-Find the average of the array
+                2-Find the difference of the array's elements from average of the array
                 3-Find the sum of elements with odd- and even-numbered indexes
                 4-Exit from app
             """);
             
+            int option = 0; // by default, invalid choice number.
+            boolean isValidChoice = false; 
             while(!isValidChoice){
                 System.out.print("Select your choice: ");
-                if(!input.hasNextInt()){
-                    option = input.nextInt();
-                    if(option == 1 || option == 2 || option == 3 || option == 4){
-                        System.out.print("Valid choice");
+                if(input.hasNextInt()){
+                    int value = input.nextInt();
+                    if(value > 0 && value < 5){
+                        option = value;
                         isValidChoice = true;
                     } else {
-                        System.out.print("Invalid choice");
+                        System.out.println("Invalid choice");
                     }
                 } else {
-                    System.out.print("Choose a valid number");
+                    System.out.println("Choose a valid number");
                 }
+                input.nextLine();
             }
 
             if (option == 1){
@@ -45,7 +46,7 @@ public class Menu {
             } else if (option == 3){
                 System.out.println("Find the sum of elements with odd indexes: " + ArrayApp.findSumOfOddNumberedIndexes(arr));
                 System.out.println("Find the sum of elements with even indexes: " + ArrayApp.findSumOfEvenNumberedIndexes(arr));
-            } else{
+            } else if (option == 4){
                 System.out.print("Exiting");
                 isFinished = true;
             }

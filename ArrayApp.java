@@ -39,16 +39,17 @@ public class ArrayApp {
      */
     public static int[] differenceFromAverage(int[] arr) {
         int average = 0;
+        int[] differences = new int[arr.length]; 
         for(int i = 0; i < arr.length; i++){
             average += arr[i];
         }
         average /= arr.length;
 
         for(int i = 0; i < arr.length; i++){
-            arr[i] = arr[i] - average;
+            differences[i] = arr[i] - average;
         }
 
-        return arr;
+        return differences;
     }
 
     /**
